@@ -32,9 +32,9 @@ app.use(express.static('./public'));
 
 app.set('view engine', 'ejs');
 
-// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client(process.env.DATABASE_URL);
 
-const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+//const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
 //-------------//
 //-------Routes
@@ -94,12 +94,12 @@ function maybellineProductsHandler(req, res) {
             res.render('pages/maybellineProducts', { data: dataArray })
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 94 ~ maybellineProductsHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 97 ~ maybellineProductsHandler ~ err", err);
         })
 }
 
 function insertMyProductsHandler(req, res) {
-    console.log("🚀 ~ file: server.js ~ line 90 ~ insertMyProductsHandler ~ req", req.body);
+    // console.log("🚀 ~ file: server.js ~ line 90 ~ insertMyProductsHandler ~ req", req.body);
     let { name, price, image_link, description } = req.body;
     let SQL = `INSERT INTO products (name, price, image_link, description) VALUES ($1, $2, $3, $4)`
     let safeValues = [name, price, image_link, description];
@@ -108,7 +108,7 @@ function insertMyProductsHandler(req, res) {
             res.redirect('/myProducts');
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 105 ~ insertMyProductsHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 111 ~ insertMyProductsHandler ~ err", err);
         })
 }
 
@@ -124,7 +124,7 @@ function myProductsHandler(req, res) {
             }
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 118 ~ myProductsHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 127 ~ myProductsHandler ~ err", err);
         })
 }
 
@@ -137,7 +137,7 @@ function viewDetailsHandler(req, res) {
             res.render('pages/productDetails', { data: results.rows[0] });
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 128 ~ viewDetailsHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 140 ~ viewDetailsHandler ~ err", err);
         })
 }
 
@@ -150,7 +150,7 @@ function deleteHandler(req, res) {
             res.redirect('/myProducts');
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 138 ~ deleteHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 153 ~ deleteHandler ~ err", err);
         })
 }
 
@@ -164,7 +164,7 @@ function updateHandler(req, res) {
             res.redirect(`/viewDetails/${id}`);
         })
         .catch(err => {
-            console.log("🚀 ~ file: server.js ~ line 155 ~ updateHandler ~ err", err);
+            console.log("🚀 ~ file: server.js ~ line 167 ~ updateHandler ~ err", err);
         })
 }
 

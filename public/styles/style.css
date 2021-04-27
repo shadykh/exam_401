@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
 *b {
   box-sizing: border-box;
 }
 main {
+  font-family: "Architects Daughter", cursive;
   width: 960px;
   margin: auto;
   display: flex;
@@ -9,11 +12,69 @@ main {
   justify-content: space-between;
   align-content: space-around;
   align-items: flex-start;
+  padding: 20px 0;
 }
 .div {
+  font-family: "Architects Daughter", cursive;
   width: 32%;
   background: white;
   border-left: 4px solid pink;
   padding: 3px 2px;
   margin: 2px 2px;
+  box-shadow: 1px 1px 1px 1px grey;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  font-family: "Architects Daughter", cursive;
+  background-image: url(http://makeup-api.herokuapp.com/assets/brushes-6d2ab84631ecd47ced4fa07c47eb37521eb61c5a525965dafaf308f21338aa44.png);
+  height: 348px;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  font-family: "Architects Daughter", cursive;
+  background: #292929;
+  width: 100%;
+  display: flex;
+}
+.a-header {
+  font-family: "Architects Daughter", cursive;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 1px 28px;
+  color: white;
+}
+.h2-header {
+  font-family: "Architects Daughter", cursive;
+  font-size: 65px;
+  background: #00000069;
+  padding: 36px 90px;
+  margin: 48px 0;
+  color: white;
+}
+footer {
+  font-family: "Architects Daughter", cursive;
+  background: #292929;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  height: 43px;
+  align-items: center;
+}
+button {
+  background: #292929;
+  color: white;
+  padding: 2px 2px;
+  font-family: "Architects Daughter", cursive;
+}
+.empty {
+  font-size: 65px;
+  color: #8c2f5b;
+  font-family: "Architects Daughter", cursive;
 }

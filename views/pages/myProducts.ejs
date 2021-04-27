@@ -7,11 +7,11 @@
     <main>
         <% data.forEach(element => { %>
          
-            <div>
+            <div class="div">
                 <img src="<%= element.image_link %>" alt="">
                 <h2>Name: <%= element.name %> </h2>
                 <h3>Price: $<%= element.price %> </h3>
-                <button><a href="/viewDetails/<%= element.id %>">View Details</a></button>
+                <button><a class='a-header' href="/viewDetails/<%= element.id %>">View Details</a></button>
             </div>
 
         <% }) %>
