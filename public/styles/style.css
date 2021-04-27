@@ -1,4 +1,19 @@
+*b {
+  box-sizing: border-box;
+}
 main {
   width: 960px;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  align-items: flex-start;
+}
+.div {
+  width: 32%;
+  background: white;
+  border-left: 4px solid pink;
+  padding: 3px 2px;
+  margin: 2px 2px;
 }
