@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../layout/head') %>
+<body>
+
+    <%- include('../layout/header') %>
+
+    <main>
+        <form action="/productByPrice" method="POST">
+        Enter the Brand<input type="text" name="brand" id="brand">
+        Greater than<input type="number" name="greater" id="greater">
+        Less than<input type="number" name="less" id="less">
+        <button>Submit</button>
+        </form>
+
+    </main>
+
+    <%- include('../layout/footer') %>
+    
+</body>
+</html>

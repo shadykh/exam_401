@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../layout/head') %>
+<body>
+    <%- include('../layout/header') %>
+
+    <main>
+        <% data.forEach(element => { %>
+         
+            <div>
+                <img src="<%= element.image_link %>" alt="">
+                <h2>Name: <%= element.name %> </h2>
+                <h3>Price: $<%= element.price %> </h3>
+                <p>Description: <%= element.description %></p>
+                <form action="/insertMyProducts" method="POST">
+                <input type="hidden" name="name" value="<%= element.name %>">
+                <input type="hidden" name="price" value="<%= element.price %>">
+                <input type="hidden" name="image_link" value="<%= element.image_link %>">
+                <input type="hidden" name="description" value="<%= element.description %>">
+                <button>Add to the Card</button>
+                </form>
+            </div>
+
+        <% }) %>
+    </main>
+
+    <%- include('../layout/footer') %>
+    
+</body>
+</html>
